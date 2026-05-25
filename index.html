@@ -4,103 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aura Apparel | Premium Clothing</title>
+    <title>Aura Apparel | React</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar">
-      <div class="logo">AURA.</div>
-      <ul class="nav-links">
-        <li><a href="#">Men</a></li>
-        <li><a href="#">Women</a></li>
-        <li><a href="#">Collections</a></li>
-      </ul>
-      <div class="cart-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-        <span class="cart-count">0</span>
-      </div>
-    </nav>
-
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Elevate Your<br><span class="gradient-text">Everyday Style</span></h1>
-        <p>Discover the new Spring Collection '26. Minimalist designs, maximum impact.</p>
-        <button class="btn-primary">Shop Collection</button>
-      </div>
-    </header>
-
-    <section class="products">
-      <h2 class="section-title">Trending Now</h2>
-      <div class="product-grid" id="productGrid">
-        <!-- Products injected via JS -->
-      </div>
-    </section>
-
-    <!-- Product Details Modal -->
-    <div class="modal-overlay" id="productModal">
-      <div class="modal-content light-theme">
-        <button class="close-modal" id="closeModal">&times;</button>
-        <div class="modal-body-3col">
-          <!-- Left Column: Text & Details -->
-          <div class="modal-col-left">
-            <h4 id="modalSubtitle" class="modal-subtitle">AURA APPAREL</h4>
-            <h2 id="modalTitle">T-SHIRT TPF OVERSIZE</h2>
-            <p class="modal-price-light" id="modalPrice" style="font-size: 1.5rem; font-weight: 600; color: #8bb3cd; margin-bottom: 1rem;">$0.00</p>
-            <p id="modalDesc" class="modal-desc">Details here...</p>
-            <a href="#" class="read-more">Read More</a>
-            <div class="small-thumbnail">
-              <img src="" id="modalThumb" alt="thumbnail">
-            </div>
-          </div>
-          
-          <!-- Center Column: Big Image -->
-          <div class="modal-col-center">
-            <div class="main-image-wrapper">
-              <img src="" alt="Product" id="modalImg">
-            </div>
-            <div class="tech-text">
-              <span class="tech-sub">PREMIUM QUALITY</span>
-              <span class="tech-main">DESIGNED FOR EVERYDAY COMFORT</span>
-            </div>
-          </div>
-
-          <!-- Right Column: Options & Actions -->
-          <div class="modal-col-right">
-            <div class="size-section">
-              <h3>SIZE</h3>
-              <div class="size-options">
-                <span class="size-btn">S</span>
-                <span class="size-btn active">M</span>
-                <span class="size-btn">L</span>
-                <span class="size-btn">XL</span>
-              </div>
-              <a href="#" class="size-guide">Size Guide</a>
-            </div>
-
-            <div class="color-section">
-              <h3>COLOUR</h3>
-              <div class="color-grid">
-                <div class="color-item active"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&q=80" alt="Oatmeal"><span class="color-name">OATMEAL</span></div>
-                <div class="color-item"><img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=100&q=80" alt="Charcoal"><span class="color-name">CHARCOAL</span></div>
-                <div class="color-item"><img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=100&q=80" alt="Smoke"><span class="color-name">SMOKE</span></div>
-                <div class="color-item"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=100&q=80" alt="Abbey"><span class="color-name">ABBEY</span></div>
-                <div class="color-item"><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=100&q=80" alt="Steel"><span class="color-name">STEEL</span></div>
-                <div class="color-item"><img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=100&q=80" alt="Sand"><span class="color-name">SAND</span></div>
-              </div>
-            </div>
-
-            <div class="action-buttons">
-              <button class="btn-favorite">FAVORITE</button>
-              <button class="btn-add-cart" id="modalAddCart">ADD TO CART</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script type="module" src="/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
