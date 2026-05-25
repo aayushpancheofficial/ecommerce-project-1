@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import VanillaTilt from 'vanilla-tilt';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Men from './pages/Men';
+import Women from './pages/Women';
+import Collections from './pages/Collections';
 
 const products = [
   { id: 1, name: 'Urban Tech Jacket', desc: 'Waterproof minimalist design', fullDesc: 'Stay protected from the elements without compromising on style. This jacket features a multi-layer waterproof fabric, taped seams, and a sleek silhouette perfect for city commutes.', price: 129.99, img: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=600&auto=format&fit=crop' },
@@ -184,13 +188,13 @@ export default function App() {
   };
 
   return (
-    <>
+    <Router>
       <nav className="navbar">
-        <div className="logo">AURA.</div>
+        <div className="logo"><Link to="/" style={{color: 'white', textDecoration: 'none'}}>AURA.</Link></div>
         <ul className="nav-links">
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">Collections</a></li>
+          <li><Link to="/men">Men</Link></li>
+          <li><Link to="/women">Women</Link></li>
+          <li><Link to="/collections">Collections</Link></li>
         </ul>
         <div className="cart-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -202,33 +206,42 @@ export default function App() {
         </div>
       </nav>
 
-      <header className="hero">
-        <div className="hero-content">
-          <h1>Elevate Your<br/><span className="gradient-text">Everyday Style</span></h1>
-          <p>Discover the new Spring Collection '26. Minimalist designs, maximum impact.</p>
-          <button className="btn-primary">Shop Collection</button>
-        </div>
-      </header>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <header className="hero">
+              <div className="hero-content">
+                <h1>Elevate Your<br/><span className="gradient-text">Everyday Style</span></h1>
+                <p>Discover the new Spring Collection '26. Minimalist designs, maximum impact.</p>
+                <button className="btn-primary">Shop Collection</button>
+              </div>
+            </header>
 
-      <section className="products">
-        <h2 className="section-title">Trending Now</h2>
-        <div className="product-grid">
-          {products.map((p) => (
-            <ProductCard 
-              key={p.id} 
-              product={p} 
-              onOpenModal={setSelectedProduct} 
-              onAddToCart={handleAddToCart} 
-            />
-          ))}
-        </div>
-      </section>
+            <section className="products">
+              <h2 className="section-title">Trending Now</h2>
+              <div className="product-grid">
+                {products.map((p) => (
+                  <ProductCard 
+                    key={p.id} 
+                    product={p} 
+                    onOpenModal={setSelectedProduct} 
+                    onAddToCart={handleAddToCart} 
+                  />
+                ))}
+              </div>
+            </section>
+          </>
+        } />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/collections" element={<Collections />} />
+      </Routes>
 
       <Modal 
         product={selectedProduct} 
         onClose={() => setSelectedProduct(null)} 
         onAddToCart={handleAddToCart} 
       />
-    </>
+    </Router>
   );
 }
